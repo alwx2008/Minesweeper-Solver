@@ -10,3 +10,19 @@ public class MineSweeper {
         M.startGame();
     }
 }
+
+public void startGame() {
+    System.out.println("\n\n================Welcome to Minesweeper ! ================\n");
+    setupField(1);
+
+    boolean flag = true;
+    while (flag) {
+        displayVisible();
+        flag = playMove();
+        if(checkWin()) {
+            displayHidden();
+            system.out.println("\n================You WON!!!====================");
+            break;
+        }
+    }
+}
